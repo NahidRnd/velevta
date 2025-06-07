@@ -7,7 +7,7 @@ import { getUserById } from "./user.actions";
 import { auth } from "@/auth";
 import { insertOrderSchema } from "../validator";
 import { prisma } from "@/db/prisma";
-import { CartItem, PaymentResult } from "@/types";
+import { CartItem } from "@/types";
 import { PAGE_SIZE } from "../constants";
 import { Prisma } from "@prisma/client";
 import { revalidatePath } from "next/cache";
