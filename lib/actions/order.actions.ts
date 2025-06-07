@@ -114,15 +114,18 @@ export async function getMyOrders({
   const session = await auth();
   if (!session) throw new Error('User is not authenticated');
 
+  const userId = session?.user?.id;
+  if (!userId) throw new Error('User not found');
+
   const data = await prisma.order.findMany({
-    where: { userId: session?.user?.id! },
+    where: { userId: userId! },
     orderBy: { createdAt: 'desc' },
     take: limit,
     skip: (page - 1) * limit,
   });
 
   const dataCount = await prisma.order.count({
-    where: { userId: session?.user?.id! },
+    where: { userId: userId! },
   });
 
   return {
@@ -239,10 +242,10 @@ export async function deleteOrder(id: string) {
 // Update Order to Paid in Database
 export async function updateOrderToPaid({
   orderId,
-  paymentResult,
+  // paymentResult,
 }: {
   orderId: string;
-  paymentResult?: PaymentResult;
+  // paymentResult?: PaymentResult;
 }) {
   // Find the order in the database and include the order items
   const order = await prisma.order.findFirst({
