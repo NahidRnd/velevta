@@ -1,5 +1,5 @@
 import { APP_NAME } from "@/lib/constants";
-import { AlignLeft, Heart, ShoppingCart, UserIcon } from "lucide-react";
+import { AlignLeft, Heart, ShoppingCart } from "lucide-react";
 import Image from "next/image";
 import Link from "next/link";
 import ModeToggle from "./mode-toggle";
@@ -7,7 +7,6 @@ import { Sheet, SheetContent, SheetDescription, SheetHeader, SheetTitle, SheetTr
 import Menu from "./Menu";
 import UserButton from "./user-button";
 import CategoryDrawer from "./category-drawer";
-import { Input } from "@/components/ui/input";
 import Search from "./search";
 
 
@@ -20,18 +19,6 @@ const Header = () => {
                     <div className="hidden md:flex flex-1">
                         <CategoryDrawer />
                         <Search />
-                        {/* <div className="ml-2">
-                            <Input
-                                type='search'
-                                placeholder='Search...'
-                                name='query'
-                                // value={queryValue}
-                                // onChange={(e) => setQueryValue(e.target.value)}
-                                className='md:w-[100px] lg:w-[300px]' />
-                            <button type='submit' className='sr-only'>
-                                Search
-                            </button>
-                        </div> */}
                     </div>
                     <nav className="md:hidden">
                         <Sheet>
@@ -82,7 +69,6 @@ const Header = () => {
                                 <div className="absolute inset-y-0 left-0 flex items-center md:hidden">
                                 </div>
                                 <div className="hidden md:ml-6 md:block">
-                                {/* <ul className={`${(pathname !== '/')? 'text-[#ed711b]':'text-[#333]'} flex gap-x-5  justify-center`}> */}
                                 <ul className={`flex gap-x-5  justify-center`}>
                                     <Menu />
                                 </ul>

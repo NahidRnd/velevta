@@ -1,6 +1,5 @@
 import { Metadata } from 'next';
 import { deleteUser, getAllUsers } from '@/lib/actions/user.actions';
-import { requireAdmin } from '@/lib/auth-guard';
 import { Table, TableBody, TableCell, TableHead, TableHeader, TableRow } from '@/components/ui/table';
 import { Button } from '@/components/ui/button';
 import Link from 'next/link';
@@ -14,7 +13,6 @@ export const metadata: Metadata = {
 };
 
 const AdminUsersPage = async(props: { searchParams: Promise<{page: string; query: string}>}) => {
-    // await requireAdmin();
     const searchParams = await props.searchParams;
     const { page = '1', query:searchText } = searchParams;
     const users = await getAllUsers({ page: Number(page), query: searchText });

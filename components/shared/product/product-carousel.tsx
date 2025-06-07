@@ -5,7 +5,6 @@ import { Carousel, CarouselContent, CarouselItem, CarouselNext, CarouselPrevious
 import { Product } from '@/types';
 import Link from 'next/link';
 import Image from 'next/image';
-import { Button } from '@/components/ui/button';
 import { ArrowRight } from 'lucide-react';
 
 const ProductCarousel = ({data}: {data: Product[]}) => {

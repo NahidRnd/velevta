@@ -7,7 +7,6 @@ import { revalidatePath } from "next/cache";
 import { insertProductSchema, updateProductSchema } from "../validator";
 import { z } from "zod";
 import { Prisma } from "@prisma/client";
-// import { PrismaClient } from "@prisma/client";
 
 // Get latest products
 export async function getLatestProducts(){

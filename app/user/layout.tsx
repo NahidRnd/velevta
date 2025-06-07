@@ -1,7 +1,6 @@
 import { APP_NAME } from '@/lib/constants';
 import Image from 'next/image';
 import Link from 'next/link';
-import Menu from '@/components/shared/header/Menu';
 import MainNav from './main-nav';
 import ModeToggle from '@/components/shared/header/mode-toggle';
 import UserButton from '@/components/shared/header/user-button';

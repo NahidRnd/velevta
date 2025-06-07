@@ -1,5 +1,4 @@
 import { Metadata } from 'next';
-import { requireAdmin } from '@/lib/auth-guard';
 import ProductForm from '@/components/admin/product-form';
 
 export const metadata: Metadata = {
