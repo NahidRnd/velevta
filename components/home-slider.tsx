@@ -103,7 +103,7 @@ const HomeSlider = () => {
 
        {/* Navigation Dots */}
       <div className="absolute bottom-4 left-0 right-0 flex justify-center space-x-2 z-20">
-        {Array.from({ length: 3 }).map((_, index) => (
+        {Array.from({ length: totalItems }).map((_, index) => (
           <button
             key={index}
             onClick={() => scrollToIndex(index)}
