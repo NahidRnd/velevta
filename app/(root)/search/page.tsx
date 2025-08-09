@@ -66,7 +66,7 @@ export async function generateMetadata(props: {
   }
 }
 
-const SearchPage = async (props:{searchParams: Promise<{q?: string;category?: string;price?: string;rating?: string;sort?: string;page?: string;}>}) => {
+const SearchPage = async (props:{searchParams: {q?: string;category?: string;price?: string;rating?: string;sort?: string;page?: string;}}) => {
     const {q = 'all', category = 'all', price = 'all', rating = 'all', sort = 'newest', page = '1',} = await props.searchParams;
     const products = await getAllProducts({
         query: q,
