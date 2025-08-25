@@ -1,6 +1,6 @@
 'use client';
 
-import { Review } from "@prisma/client";
+// import { Review } from "@prisma/client";
 import Link from "next/link";
 import { useEffect, useState } from "react";
 import ReviewForm from "./review-form";
@@ -10,6 +10,7 @@ import { Calendar, User } from "lucide-react";
 import { formatDateTime } from "@/lib/utils";
 import Rating from "@/components/shared/product/rating";
 import { toast } from "sonner";
+import { Review } from "@/types";
 
 const ReviewList = ({ userId, productId, productSlug,}: { userId: string; productId: string; productSlug: string;}) => {
     const [reviews, setReviews] = useState<Review[]>([]);
@@ -65,13 +66,15 @@ const ReviewList = ({ userId, productId, productSlug,}: { userId: string; produc
       <CardContent>
         <div className='flex space-x-4 text-sm text-muted-foreground'>
           <Rating value={review.rating} />
-          <div className='flex items-center'>
-            <User className='mr-1 h-3 w-3' />
-            {/* {review.user ? review.user.name : 'Deleted User'} */}
-          </div>
-          <div className='flex items-center'>
-            <Calendar className='mr-1 h-3 w-3' />
-            {formatDateTime(review.createdAt).dateTime}
+          <div className="flex flex-col md:flex-row md:gap-6">
+            <div className='flex items-center'>
+              <User className='mr-1 h-3 w-3' />
+              {review.user ? review.user.name : 'Deleted User'}
+            </div>
+            <div className='flex items-center md:text-xs text-[9px]'>
+              <Calendar className='mr-1 h-3 w-3' />
+              {formatDateTime(review.createdAt).dateTime}
+            </div>
           </div>
         </div>
       </CardContent>

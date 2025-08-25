@@ -14,8 +14,8 @@ const Header = () => {
 
     return ( 
         <header className="w-full">
-            <div className="container !pb-0">
-                <div className="flex justify-between items-center m-auto border-b !border-b-gray-200 pb-10">
+            <div className="container !pb-0 md:pt-4 pt-2!">
+                <div className="flex justify-between items-center m-auto border-b !border-b-gray-200 md:pb-10 pb-2">
                     <div className="hidden md:flex flex-1">
                         <CategoryDrawer />
                         <Search />
@@ -48,12 +48,12 @@ const Header = () => {
                     <div>
                         <Link href='/' className="flex items-center">
                             <Image src='/images/logo.png' width={48} height={48} alt={`${APP_NAME} logo`}/>
-                            <span className='hidden md:block font-bold text-2xl ml-3'>
+                            <span className='block font-bold text-2xl ml-3'>
                                 {APP_NAME}
                             </span>
                         </Link>
                     </div>
-                    <div className="flex-1 justify-end flex items-center gap-6">
+                    <div className="md:flex-1 justify-end flex items-center gap-6">
                         <div className="hidden gap-6 md:flex items-center">
                             <ModeToggle />
                             <UserButton style='' text='' />
@@ -63,12 +63,12 @@ const Header = () => {
                     </div>
                 </div>
                 <div>
-                    <nav className="z-9 relative">
+                    <nav className="z-9 relative md:block hidden">
                         <div className="max-w-[1140px] m-auto">
                             <div className="flex items-center justify-center relative h-20">
-                                <div className="absolute inset-y-0 left-0 flex items-center md:hidden">
-                                </div>
-                                <div className="hidden md:ml-6 md:block">
+                                {/* <div className="absolute inset-y-0 left-0 flex items-center md:hidden">
+                                </div> */}
+                                <div className="md:ml-6">
                                 <ul className={`flex gap-x-5  justify-center`}>
                                     <Menu />
                                 </ul>

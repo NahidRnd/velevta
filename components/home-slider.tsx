@@ -33,7 +33,7 @@ const HomeSlider = () => {
     carouselApi?.scrollTo(index);
   };
     return (
-        <Carousel className='w-full mb-12'
+        <Carousel className='w-full'
             setApi={setCarouselApi}
             opts={{
                 loop: true,
@@ -51,7 +51,7 @@ const HomeSlider = () => {
               <div className='relative mx-auto'>
                 <Image alt='Velveta' src='/images/slider1.jpg' width='0' height='0' sizes='100vw' className='w-full h-[500px] object-cover'/>    
                 <div className='absolute inset-0 flex items-center justify-end'>
-                  <div className='text-white mr-[15%] max-w-[380px] text-left'>
+                  <div className='text-white md:mr-[15%] mx-4 max-w-[380px] text-left'>
                     <h2 className='text-4xl font-bold text-left'>
                         Velveta: Elevate Your Shopping Experience
                     </h2>
@@ -67,7 +67,7 @@ const HomeSlider = () => {
               <div className='relative mx-auto'>
                 <Image alt='Velveta' src='/images/slider2.jpg' width='0' height='0' sizes='100vw' className='w-full h-[500px] object-cover'/>    
                 <div className='absolute inset-0 flex items-center'>
-                  <div className='text-white ml-[15%] max-w-[380px] text-left'>
+                  <div className='text-white md:ml-[15%] mx-4 max-w-[380px] text-left'>
                     <h2 className='text-4xl font-bold text-left'>
                         Curated Elegance: Discover Our Top Picks
                     </h2>

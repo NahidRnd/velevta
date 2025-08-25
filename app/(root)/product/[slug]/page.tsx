@@ -29,7 +29,7 @@ const ProductDetailsPage = async(props: {
                 <ProductImages images={product.images} />
             </div>
             <div className="flex flex-col gap-6">
-                <h3 className="text-2xl font-semibold">{product.name}</h3>
+                <h3 className="text-2xl font-semibold md:pt-0 pt-8">{product.name}</h3>
                 <Rating value={Number(product.rating)} />
                 <p>{product.numReviews} reviews</p>
                 <ProductPrice value={Number(product.price)} />
@@ -39,7 +39,7 @@ const ProductDetailsPage = async(props: {
                     <p className="text-red-500">Out of Stock</p>
                 )}
                 <p>{product.description}</p>
-                <div className="flex gap-6">
+                <div className="flex md:gap-6 gap-3">
                     <AddToCart cart={cart} item={{productId: product.id, name: product.name, slug: product.slug, price: product.price, qty: 1, image: product.images![0],}} />
                 </div>
             </div>

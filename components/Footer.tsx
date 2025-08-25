@@ -7,11 +7,11 @@ const Footer = () => {
     const currentYear = new Date().getFullYear();
     return ( 
         <footer className="border-t bg-secondary text-[#999]">
-            <div className="container flex justify-between gap-6 px-10 mx-20">
+            <div className="container flex flex-col md:flex-row justify-between gap-6 px-10 mx-20">
                 <div className="flex flex-col gap-y-3 max-w-[300px]">
                     <Link href='/' className="flex items-center">
                         <Image src='/images/logo-d.png' width={48} height={48} alt={`${APP_NAME} logo`}/>
-                        <span className='hidden md:block font-bold text-2xl ml-3 text-white'>
+                        <span className='font-bold text-2xl ml-3 text-white'>
                             {APP_NAME}
                         </span>
                     </Link>
@@ -58,7 +58,7 @@ const Footer = () => {
                     </ul>
                 </div>
             </div>
-            <div className="p-5 flex justify-center border-t mx-32">
+            <div className="p-5 flex justify-center border-t md:mx-32">
                 {currentYear} {APP_NAME}. All Rights Reserved
             </div>
         </footer>

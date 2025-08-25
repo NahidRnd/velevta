@@ -10,7 +10,7 @@ import { ArrowRight } from 'lucide-react';
 const ProductCarousel = ({data}: {data: Product[]}) => {
     return ( 
     <Carousel
-      className='w-full mb-12'
+      className='w-full'
       opts={{
         loop: true,
       }}
@@ -33,24 +33,24 @@ const ProductCarousel = ({data}: {data: Product[]}) => {
                   width='0'
                   height='0'
                   sizes='100vw'
-                  className='w-full h-64'
+                  className='w-full h-64 object-cover'
                 /> 
                 ) : (
                    <Image src='/images/noimage.png' alt={product.name} width={300} height={300} />     
                 )}
                 
                 <div className='absolute inset-0 flex items-end justify-center'>
-                  <h2 className='bg-gray-900/30 text-2xl font-bold px-2 text-white w-full py-2 flex justify-center items-center'>
+                  <h2 className='bg-gray-900/30 md:text-2xl text-xl font-bold px-2 text-white w-full py-2 flex justify-center items-center'>
                     {product.name}
-                    <Link href={`/product/${product.slug}`} className='text-lg font-semibold ml-6 uppercase flex mt-1'>Shop Now <ArrowRight /></Link>
+                    <Link href={`/product/${product.slug}`} className='md:text-lg text-md! md:font-semibold ml-6 uppercase flex mt-1 items-center'>Shop Now <ArrowRight /></Link>
                   </h2>
                 </div>
               </div>
           </CarouselItem>
         ))}
       </CarouselContent>
-      <CarouselPrevious />
-      <CarouselNext />
+      <CarouselPrevious className='md:block hidden' />
+      <CarouselNext className='md:block hidden' />
     </Carousel>
     );
 }

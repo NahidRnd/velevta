@@ -114,7 +114,7 @@ const OrderDetailsTable = ({order,isAdmin,stripeClientSecret,}: {order: Omit<Ord
                                 <TableCell>
                                   <Link href={`/product/${item.slug}`} className='flex items-center'>
                                     <Image src={item.image} alt={item.name} width={50} height={50}></Image>
-                                    <span className='px-2'>{item.name}</span>
+                                    <span className='px-2 md:w-full w-50 whitespace-break-spaces'>{item.name}</span>
                                   </Link>
                                 </TableCell>
                                 <TableCell>
@@ -129,7 +129,7 @@ const OrderDetailsTable = ({order,isAdmin,stripeClientSecret,}: {order: Omit<Ord
                     </Card>
                 </div>
                 <div>
-                  <Card>
+                  <Card className="md:mt-0 mt-4">
                     <CardContent className='p-4 space-y-4 gap-4'>
                       <h2 className='text-xl pb-4'>Order Summary</h2>
                       <div className='flex justify-between'>

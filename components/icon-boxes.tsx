@@ -3,7 +3,7 @@ import { Card, CardContent } from "./ui/card";
 
 const IconBoxes = () => {
     return (
-    <div className="container">
+    <div className="container md:py-4! py-0!">
       <Card className="border-0 border-b rounded-none shadow-white">
         <CardContent className='grid gap-4 md:grid-cols-4 p-4 justify-items-center'>
           <div className='space-y-2 text-center'>

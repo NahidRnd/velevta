@@ -26,7 +26,7 @@ const CartTable = ({ cart }: { cart?: Cart }) => {
             </div>
         ) : (
             <div className='grid md:grid-cols-4 md:gap-5'>
-                <div className='overflow-x-auto md:col-span-3'>
+                <div className='overflow-x-auto md:col-span-3 md:mb-0 mb-4'>
                     <Table>
                     <TableHeader>
                         <TableRow>
@@ -38,60 +38,62 @@ const CartTable = ({ cart }: { cart?: Cart }) => {
                     <TableBody>
                     {cart.items.map((item) => (
                         <TableRow key={item.slug}>
-                        <TableCell>
-                            <Link href={`/product/${item.slug}`} className='flex items-center'>
-                            <Image src={item.image} alt={item.name} width={50} height={50} />
-                            <span className='px-2'>{item.name}</span>
-                            </Link>
-                        </TableCell>
-                        <TableCell className='flex justify-center items-center gap-2'>
-                            <Button
-                                disabled={isPending}
-                                variant='outline'
-                                type='button'
-                                onClick={() =>
-                                startTransition(async () => {
-                                    const res = await removeItemFromCart(item.productId);
-                                    if (!res.success) {
-                                    toast("",{
-                                        // variant: 'destructive',
-                                        description: res.message,
-                                    });
+                            <TableCell>
+                                <Link href={`/product/${item.slug}`} className='flex items-center'>
+                                <Image src={item.image} alt={item.name} width={50} height={50} />
+                                <span className='px-2 md:w-full w-50 whitespace-break-spaces'>{item.name}</span>
+                                </Link>
+                            </TableCell>
+                            <TableCell>
+                                <div className='flex justify-center items-center gap-2'>
+                                <Button
+                                    disabled={isPending}
+                                    variant='outline'
+                                    type='button'
+                                    onClick={() =>
+                                    startTransition(async () => {
+                                        const res = await removeItemFromCart(item.productId);
+                                        if (!res.success) {
+                                        toast("",{
+                                            // variant: 'destructive',
+                                            description: res.message,
+                                        });
+                                        }
+                                    })
                                     }
-                                })
-                                }
-                            >
-                                {isPending ? (
-                                <Loader className='w-3 h-3 animate-spin' />
-                                ) : (
-                                <Minus className='w-3 h-3' />
-                                )}
-                            </Button>
-                            <span className="px-1">
-                                {isPending ? (<Loader className='w-3 h-3 animate-spin' />) : (item.qty)}</span>
-                            <Button
-                                disabled={isPending}
-                                variant='outline'
-                                type='button'
-                                onClick={() =>
-                                startTransition(async () => {
-                                    item.qty = 1;
-                                    const res = await addItemToCart(item);
-                                    if (!res.success) {
-                                    toast("", {
-                                        // variant: 'destructive',
-                                        description: res.message,
-                                    });
+                                >
+                                    {isPending ? (
+                                    <Loader className='w-3 h-3 animate-spin' />
+                                    ) : (
+                                    <Minus className='w-3 h-3' />
+                                    )}
+                                </Button>
+                                <span className="px-1">
+                                    {isPending ? (<Loader className='w-3 h-3 animate-spin' />) : (item.qty)}</span>
+                                <Button
+                                    disabled={isPending}
+                                    variant='outline'
+                                    type='button'
+                                    onClick={() =>
+                                    startTransition(async () => {
+                                        item.qty = 1;
+                                        const res = await addItemToCart(item);
+                                        if (!res.success) {
+                                        toast("", {
+                                            // variant: 'destructive',
+                                            description: res.message,
+                                        });
+                                        }
+                                    })
                                     }
-                                })
-                                }
-                            >
-                                {isPending ? (
-                                <Loader className='w-3 h-3  animate-spin' />
-                                ) : (
-                                <Plus className='w-3 h-3' />
-                                )}
-                            </Button>
+                                >
+                                    {isPending ? (
+                                    <Loader className='w-3 h-3  animate-spin' />
+                                    ) : (
+                                    <Plus className='w-3 h-3' />
+                                    )}
+                                </Button>
+                                </div>
                             </TableCell>
                             <TableCell className='text-right'>${item.price}</TableCell>
                         </TableRow>

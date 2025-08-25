@@ -11,7 +11,7 @@ const ProductCard = ({ product }: { product: Product }) => {
             <CardHeader>
                 <Link href={`/product/${product.slug}`}>
                     {product.images[0] ? (
-                        <Image src={product.images[0]} alt={product.name} width={300} height={300} className="h-80" />
+                        <Image src={product.images[0]} alt={product.name} width={300} height={300} className="h-80 object-cover" />
                     ): (
                         <Image src='/images/noimage.png' alt={product.name} width={300} height={300} />
                     )}

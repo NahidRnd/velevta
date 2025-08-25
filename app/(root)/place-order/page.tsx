@@ -81,7 +81,7 @@ const PlaceOrderPage = async () => {
                                 <TableCell>
                                     <Link href={`/product/${item.slug}`} className='flex items-center'>
                                         <Image src={item.image} alt={item.name} width={50} height={50}></Image>
-                                        <span className='px-2'>{item.name}</span>
+                                        <span className='px-2 md:w-full w-50 whitespace-break-spaces'>{item.name}</span>
                                     </Link>
                                 </TableCell>
                                 <TableCell>
@@ -93,13 +93,13 @@ const PlaceOrderPage = async () => {
                         </TableBody>
                         </Table>
                         <Link href='/cart'>
-                            <Button variant='outline'>Edit</Button>
+                            <Button variant='outline' className="md:mt-0 mt-3">Edit</Button>
                         </Link>
                     </CardContent>
                 </Card>
             </div>
             <div>
-                <Card>
+                <Card className="md:mt-0 mt-4">
                     <CardContent className='p-4 gap-4 space-y-4'>
                     <div className='flex justify-between'>
                         <div>Items</div>

@@ -46,7 +46,7 @@ const PaymentMethodForm = ( {method}: {method: string | null}) => {
     
     return ( 
         <>
-        <div className='max-w-md mx-auto'>
+        <div className='max-w-md md:mx-auto mx-4 mb-10'>
             <Form {...form}>
                 <form method="post" onSubmit={form.handleSubmit(onSubmit)} className="w-2/3 space-y-6">
                 <h1 className='h2-bold mt-4'>Payment Method</h1>
