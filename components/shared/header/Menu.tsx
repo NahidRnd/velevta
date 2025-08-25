@@ -17,7 +17,7 @@ const Menu = () => {
                 <Link href='/properties' className={`${(pathname === '/properties')?'text-primary' : ''} hover:text-primary rounded-md py-2`}>Products</Link>
             </li> 
             <li>
-                <Link href='/properties' className={`${(pathname === '/properties')?'text-primary' : ''} hover:text-primary rounded-md py-2`}>About Us</Link>
+                <Link href='/about-us' className={`${(pathname === '/about-us')?'text-primary' : ''} hover:text-primary rounded-md py-2`}>About Us</Link>
             </li> 
             <li>
                 <Link href='/properties' className={`${(pathname === '/properties')?'text-primary' : ''} hover:text-primary rounded-md py-2`}>Contact Us</Link>

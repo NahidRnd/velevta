@@ -5,6 +5,8 @@
   --color-secondary: #333;
   --color-background: #fff;
   --color-border: #777;
+  --color-text: #999;
+  --color-dark: #666;
 }
 
 @layer base {
@@ -55,3 +57,6 @@ html.dark .upload-field .text-white {
   @apply rounded-r-none w-34;
 }
 
+.shadow{
+  box-shadow: 0 5px 40px 0 rgba(0, 0, 0, .05);
+}
