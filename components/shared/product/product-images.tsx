@@ -8,7 +8,7 @@ const ProductImages = ({images} : {images: string[]}) => {
     return ( 
         <div>
             <Image src={images[current]} alt="product image" width={700} height={700} className="min-h-[300px] object-cover object-center" />
-            <div className="flex">
+            <div className="flex gap-x-3 mt-3">
                 {images.map((image, index) => (
                     <div key={index} onClick={() => setCurrent(index)} className={cn(
                         'opacity-50 cursor-pointer', current === index && 'opacity-100'

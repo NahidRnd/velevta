@@ -24,7 +24,7 @@ const ProductDetailsPage = async(props: {
     return ( 
         <>
         <section className="container">
-        <div className="grid grid-cols-1 md:grid-cols-2">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-x-14">
             <div className="w-full">
                 <ProductImages images={product.images} />
             </div>

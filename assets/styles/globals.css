@@ -60,3 +60,7 @@ html.dark .upload-field .text-white {
 .shadow{
   box-shadow: 0 5px 40px 0 rgba(0, 0, 0, .05);
 }
+
+.shadow-c{
+  box-shadow: 0 5px 30px 0 rgba(0, 0, 0, .05);
+}

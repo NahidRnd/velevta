@@ -2,6 +2,7 @@ import Image from "next/image";
 import Counter from "./counter";
 import Link from "next/link";
 import { ArrowRight } from "lucide-react";
+import ClientCarousel from "./client-carousel";
 
 const AboutPage = () => {
     return ( 
@@ -17,7 +18,7 @@ const AboutPage = () => {
                     Velveta is your destination for fashion that speaks louder than words.
                 </p>
             </div>
-            <div className="container flex gap-6 md:py-20! justify-between items-center">
+            <div className="container flex flex-col md:flex-row gap-6 md:py-20! justify-between items-center">
                 <div className="md:w-[38%]">
                     <h5 className="text-lg">01. What We Do</h5>
                     <h3 className="text-3xl font-bold leading-7 py-3 max-w-80">Provide perfect and practical services</h3>
@@ -39,7 +40,7 @@ const AboutPage = () => {
                     <p className="text-center text-text">Behind every garment is a team of designers, tailors, stylists.</p>
                 </div>
             </div>
-            <div className="container flex gap-10 items-center justify-between">
+            <div className="container flex flex-col md:flex-row gap-10 items-center justify-between">
                 <div className="md:w-[50%]">
                     <Image src="/images/customer.jpg" alt="about us page picture" width={580} height={507} className="rounded-xl" />
                 </div>
@@ -50,7 +51,7 @@ const AboutPage = () => {
                     <Link href="/products" className="flex text-lg font-semibold items-center mt-6 gap-2">visit our store <ArrowRight /></Link>
                 </div>
             </div>
-            <div className="container flex gap-10 items-center justify-between">
+            <div className="container flex flex-col md:flex-row gap-10 items-center justify-between">
                 <div className="md:w-[44%]">
                     <h5 className="text-lg">03. Our Store</h5>
                     <h3 className="text-3xl font-bold leading-7 py-3 max-w-100">Expect Restless Amazing Support</h3>
@@ -61,9 +62,10 @@ const AboutPage = () => {
                     <Image src="/images/store.jpg" alt="about us page picture" width={580} height={507} className="rounded-xl" />
                 </div>
             </div>
-            <div className="bg-[#f6f7f9] flex">
+            <div className="bg-[#f6f7f9] flex flex-col items-center py-20">
                 <h5 className="text-lg">04. Our Clients</h5>
                 <h3 className="text-3xl font-bold leading-7 py-3 max-w-100">Popular Brands</h3>
+                <ClientCarousel />
             </div>
         </div>
      );
